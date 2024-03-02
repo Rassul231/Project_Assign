@@ -1,0 +1,16 @@
+package kz.aitu.doxbin.models;
+
+import jakarta.persistence.*;
+import lombok.Data;
+
+@Data
+@Entity
+@Table(name = "users")
+public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int userid;
+    private String username;
+    private String password;
+    private int balance;
+}
