@@ -1,0 +1,43 @@
+package services;
+
+import kz.aitu.doxbin.models.User;
+import kz.aitu.doxbin.repositories.UserRepositoryInterface;
+import kz.aitu.doxbin.services.interfaces.UserServiceInterface;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Optional;
+
+@Service
+public class UserService implements UserServiceInterface {
+    final private UserRepositoryInterface userRepository;
+
+    public UserService(UserRepositoryInterface userRepository) {
+        this.userRepository = userRepository;
+    }
+
+    @Override
+    public List<User> getAllUser() {
+        return userRepository.findAll();
+    }
+
+    @Override
+    public User create(User user) {
+        return userRepository.save(user);
+    }
+
+    @Override
+    public User getUserByUsername(String email) {
+        return userRepository.findByUsername(email);
+    }
+    @Override
+    public void upBalance(int userId, int amount) {
+        Optional<User> userList = userRepository.findById(userId);
+        if (!userList.isEmpty()) {
+            User user = userList.get();
+            int currentBalance = user.getBalance();
+            user.setBalance(currentBalance + amount);
+            userRepository.save(user);
+        }
+    }
+}
