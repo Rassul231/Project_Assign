@@ -1,8 +1,8 @@
 package services;
 
-import kz.aitu.doxbin.models.User;
-import kz.aitu.doxbin.repositories.UserRepositoryInterface;
-import kz.aitu.doxbin.services.interfaces.UserServiceInterface;
+import models.User;
+import repositories.UserRepositoryInterface;
+import services.interfaces.UserServiceInterface;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
