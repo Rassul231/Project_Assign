@@ -1,4 +1,4 @@
-package kz.aitu.doxbin.services.interfaces;
+package services.interfaces;
 
 import kz.aitu.doxbin.models.User;
 import org.springframework.stereotype.Service;
