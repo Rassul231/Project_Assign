@@ -1,6 +1,6 @@
 package repositories;
 
-import kz.aitu.doxbin.models.User;
+import models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
