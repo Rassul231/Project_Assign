@@ -1,0 +1,14 @@
+package kz.aitu.doxbin.services.interfaces;
+
+import kz.aitu.doxbin.models.User;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+@Service
+public interface UserServiceInterface {
+    List<User> getAllUser();
+    User create(User user);
+    User getUserByUsername(String email);
+    void upBalance(int userId, int amount);
+
+}
